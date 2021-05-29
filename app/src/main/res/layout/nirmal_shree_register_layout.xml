@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@color/red_home"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/nirmalShreeLogo"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:src="@drawable/nirmal_shree_logo"
+        app:layout_constraintBottom_toTopOf="@id/redCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/redCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/red_home"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nirmalShreeLogo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintVertical_chainStyle="spread"
+                android:id="@+id/personNameRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                app:layout_constraintBottom_toTopOf="@id/userEmailRegister"
+                app:hintTextAppearance="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPersonNameRegister"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Person Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@={viewModel.personName}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userEmailRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintEnd_toEndOf="@id/personNameRegister"
+                app:layout_constraintStart_toStartOf="@id/personNameRegister"
+                app:layout_constraintTop_toBottomOf="@id/personNameRegister"
+                app:layout_constraintBottom_toTopOf="@id/userMobileRegister"
+                app:hintTextAppearance="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmailRegister"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.personName}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userMobileRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintEnd_toEndOf="@id/personNameRegister"
+                app:layout_constraintStart_toStartOf="@id/userEmailRegister"
+                app:layout_constraintTop_toBottomOf="@id/userEmailRegister"
+                app:layout_constraintBottom_toTopOf="@id/spinnerState"
+                app:hintTextAppearance="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextMobileRegister"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile No"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:text="@={viewModel.personName}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerState"
+                app:layout_constraintStart_toStartOf="@id/userMobileRegister"
+                app:layout_constraintEnd_toEndOf="@id/userMobileRegister"
+                app:layout_constraintTop_toBottomOf="@id/userMobileRegister"
+                app:layout_constraintBottom_toTopOf="@id/userCityRegister"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/spinner_background"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerDownArrow"
+                app:layout_constraintEnd_toEndOf="@id/spinnerState"
+                app:layout_constraintTop_toTopOf="@id/spinnerState"
+                app:layout_constraintBottom_toBottomOf="@id/spinnerState"
+                android:src="@drawable/icon_down_arrow"
+                android:tint="@color/white"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userCityRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintEnd_toEndOf="@id/userMobileRegister"
+                app:layout_constraintStart_toStartOf="@id/userMobileRegister"
+                app:layout_constraintTop_toBottomOf="@id/spinnerState"
+                app:layout_constraintBottom_toTopOf="@id/registerButton"
+                app:hintTextAppearance="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCityRegister"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="City"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:text="@={viewModel.personName}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/registerButton"
+                android:text="REGISTER"
+                app:layout_constraintTop_toBottomOf="@id/userCityRegister"
+                app:layout_constraintStart_toStartOf="@id/userCityRegister"
+                app:layout_constraintEnd_toEndOf="@id/userCityRegister"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/login_button_background_nirmalshree"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

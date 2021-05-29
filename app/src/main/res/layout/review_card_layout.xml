@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/cardViewReview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:padding="@dimen/_20sdp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutMain"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/comment"
+            android:text="@string/name_surname"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginEnd="@dimen/_30sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@id/nameSurname"
+            app:layout_constraintTop_toBottomOf="@id/nameSurname"
+            android:text="@string/dated"/>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dated"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:progressBackgroundTint="@color/white_grey"
+            android:progressTint="@color/pink"
+            android:theme="@style/Widget.AppCompat.RatingBar"
+            android:rating="1.5"
+            android:stepSize="0.5"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/comment"
+            app:layout_constraintEnd_toStartOf="@id/commentCount"
+            app:layout_constraintTop_toTopOf="@id/commentCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/commentCount"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/comment"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/commentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/_3"
+            android:textSize="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="@id/nameSurname"
+            android:layout_marginRight="@dimen/_20sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="textStart"
+            android:padding="@dimen/_10sdp"
+            android:lineSpacingExtra="@dimen/_5sdp"
+            android:text="@string/text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/circle"
+        app:cardCornerRadius="@dimen/_100sdp"
+        app:cardBackgroundColor="@color/white_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintCircle="@id/cardViewReview"
+        app:layout_constraintCircleAngle="305"
+        app:layout_constraintCircleRadius="@dimen/_150sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

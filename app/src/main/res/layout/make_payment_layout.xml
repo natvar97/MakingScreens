@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    app:cardBackgroundColor="@color/red_home"
+    app:cardCornerRadius="@dimen/_20sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_200sdp"
+            android:src="@drawable/transparent_map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:alpha="0.2"
+            android:id="@+id/backgroundImage"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/leftArrow"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:rotationY="180"
+            android:layout_margin="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/right_arrow"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rightArrow"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_margin="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/right_arrow"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textMakePayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/leftArrow"
+            app:layout_constraintEnd_toStartOf="@id/rightArrow"
+            app:layout_constraintTop_toTopOf="@id/leftArrow"
+            app:layout_constraintBottom_toBottomOf="@id/leftArrow"
+            android:text="@string/make_payment"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTimeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/leftArrow"
+            app:layout_constraintTop_toBottomOf="@id/textMakePayment"
+            app:layout_constraintBottom_toTopOf="@id/textRaipur"
+            android:text="@string/_07_30_am"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textRaipur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textTimeStart"
+            app:layout_constraintTop_toBottomOf="@id/textTimeStart"
+            app:layout_constraintBottom_toTopOf="@id/textDateStart"
+            android:text="@string/raipur"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDateStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textRaipur"
+            app:layout_constraintTop_toBottomOf="@id/textRaipur"
+            app:layout_constraintBottom_toTopOf="@id/line3"
+            android:text="@string/_11_feb_2021"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTimeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="@id/rightArrow"
+            app:layout_constraintTop_toTopOf="@id/destinationArrow"
+            app:layout_constraintBottom_toTopOf="@id/textNagpur"
+            android:text="@string/_04_20_pm"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textNagpur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/textTimeEnd"
+            app:layout_constraintTop_toBottomOf="@id/textTimeEnd"
+            app:layout_constraintBottom_toTopOf="@id/textDateEnd"
+            android:text="@string/nagpur"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDateEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/textNagpur"
+            app:layout_constraintTop_toBottomOf="@id/textNagpur"
+            app:layout_constraintBottom_toBottomOf="@id/destinationArrow"
+            android:text="@string/_11_feb_2021"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"/>
+
+
+        <View
+            android:id="@+id/line3"
+            android:background="@color/white"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@id/textDateStart"
+            app:layout_constraintEnd_toEndOf="@id/textDateEnd"
+            app:layout_constraintTop_toBottomOf="@id/textDateStart"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintBottom_toTopOf="@id/cardViewWhiteMakePayment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/destinationArrow"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/arrow"
+            android:tint="@color/white"
+            app:layout_constraintStart_toEndOf="@id/textTimeStart"
+            app:layout_constraintTop_toTopOf="@id/textTimeStart"
+            app:layout_constraintBottom_toBottomOf="@id/textDateStart"
+            app:layout_constraintEnd_toStartOf="@id/textTimeEnd"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/line3"
+            app:layout_constraintTop_toTopOf="@id/line3"
+            app:layout_constraintBottom_toBottomOf="@id/line3"
+            android:background="@drawable/image_circle_background"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/line3"
+            app:layout_constraintTop_toTopOf="@id/line3"
+            app:layout_constraintBottom_toBottomOf="@id/line3"
+            android:background="@drawable/image_circle_background"/>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewWhiteMakePayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bus_details"
+                            android:layout_marginHorizontal="@dimen/_20sdp"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintEnd_toStartOf="@id/textSeat"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/textSeatType"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:id="@+id/textBusDetails"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a_c_sleeper_2_1"
+                            app:layout_constraintStart_toStartOf="@id/textBusDetails"
+                            app:layout_constraintTop_toBottomOf="@id/textBusDetails"
+                            app:layout_constraintBottom_toBottomOf="@id/textSeatTypeDetails"
+                            android:id="@+id/textSeatType"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/seat"
+                            android:layout_marginHorizontal="@dimen/_20sdp"
+                            app:layout_constraintStart_toEndOf="@id/textBusDetails"
+                            app:layout_constraintTop_toTopOf="@id/textBusDetails"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/textSeatTypeDetails"
+                            android:id="@+id/textSeat"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a2_a3"
+                            app:layout_constraintEnd_toEndOf="@id/textSeat"
+                            app:layout_constraintTop_toBottomOf="@id/textSeat"
+                            app:layout_constraintBottom_toBottomOf="@id/textSeatType"
+                            android:id="@+id/textSeatTypeDetails"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel_boarding_point"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            app:layout_constraintEnd_toStartOf="@id/textDroppingPointCancelTicket"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="@id/textSeatType"
+                            app:layout_constraintTop_toBottomOf="@id/textSeatType"
+                            android:id="@+id/textBoardingPointCancelTicket"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location"
+                            app:layout_constraintStart_toStartOf="@id/textBoardingPointCancelTicket"
+                            app:layout_constraintTop_toBottomOf="@id/textBoardingPointCancelTicket"
+                            android:id="@+id/textLocationBoardingPoint"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel_ticket_dropping_point"
+                            app:layout_constraintStart_toEndOf="@id/textBoardingPointCancelTicket"
+                            app:layout_constraintTop_toTopOf="@id/textBoardingPointCancelTicket"
+                            app:layout_constraintEnd_toEndOf="@id/textSeatTypeDetails"
+                            android:id="@+id/textDroppingPointCancelTicket"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location"
+                            app:layout_constraintTop_toBottomOf="@id/textDroppingPointCancelTicket"
+                            app:layout_constraintEnd_toEndOf="@id/textDroppingPointCancelTicket"
+                            app:layout_constraintBottom_toBottomOf="@id/textLocationBoardingPoint"
+                            android:id="@+id/textLocationDroppingPoint"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/passenger_details"
+                            android:id="@+id/textPassengersDetails"
+                            android:textSize="@dimen/_14ssp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:layout_constraintStart_toStartOf="@id/textLocationBoardingPoint"
+                            app:layout_constraintTop_toBottomOf="@id/textLocationBoardingPoint" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel_ticket_name"
+                            app:layout_constraintEnd_toStartOf="@id/textNamePassenger2"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="@id/textPassengersDetails"
+                            app:layout_constraintTop_toBottomOf="@id/textPassengersDetails"
+                            android:id="@+id/textNamePassenger"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female_24_years"
+                            app:layout_constraintStart_toStartOf="@id/textNamePassenger"
+                            app:layout_constraintTop_toBottomOf="@id/textNamePassenger"
+                            android:id="@+id/textGenderAge"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel_ticket_name"
+                            app:layout_constraintStart_toEndOf="@id/textNamePassenger"
+                            app:layout_constraintTop_toTopOf="@id/textNamePassenger"
+                            app:layout_constraintEnd_toEndOf="@id/textLocationDroppingPoint"
+                            app:layout_constraintBottom_toTopOf="@id/textGenderAge2"
+                            android:id="@+id/textNamePassenger2"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male_25_years"
+                            app:layout_constraintEnd_toEndOf="@id/textNamePassenger2"
+                            app:layout_constraintTop_toBottomOf="@id/textNamePassenger2"
+                            app:layout_constraintBottom_toBottomOf="@id/textGenderAge"
+                            android:id="@+id/textGenderAge2"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/base_fare"
+                            android:id="@+id/textBaseFare"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/textGst"
+                            app:layout_constraintStart_toStartOf="@id/textGenderAge"
+                            app:layout_constraintTop_toBottomOf="@id/textGenderAge"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/u20b9_590_00"
+                            app:layout_constraintStart_toStartOf="@id/textBaseFare"
+                            app:layout_constraintTop_toBottomOf="@id/textBaseFare"
+                            android:id="@+id/baseFareAmount"
+                            android:textSize="@dimen/_10ssp"
+                            android:textColor="@color/black"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textGst"
+                            android:text="@string/gst"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/textTotal"
+                            app:layout_constraintBottom_toTopOf="@id/gstAmount"
+                            app:layout_constraintStart_toEndOf="@id/textBaseFare"
+                            app:layout_constraintTop_toTopOf="@id/textBaseFare"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/u20b9_20_00"
+                            app:layout_constraintStart_toStartOf="@id/textGst"
+                            app:layout_constraintEnd_toEndOf="@id/textGst"
+                            app:layout_constraintTop_toBottomOf="@id/textGst"
+                            app:layout_constraintBottom_toBottomOf="@id/baseFareAmount"
+                            android:id="@+id/gstAmount"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textTotal"
+                            android:text="@string/total"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/textGenderAge2"
+                            app:layout_constraintStart_toEndOf="@id/textGst"
+                            app:layout_constraintTop_toTopOf="@id/textGst"
+                            app:layout_constraintBottom_toTopOf="@id/totalAmount"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/u20b9_610_00"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@id/textTotal"
+                            app:layout_constraintTop_toBottomOf="@id/textTotal"
+                            app:layout_constraintBottom_toBottomOf="@id/gstAmount"
+                            android:id="@+id/totalAmount"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/selectPaymentMethodSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dialog"
+                            android:padding="@dimen/_5sdp"
+                            app:layout_constraintStart_toStartOf="@id/buttonContinue"
+                            app:layout_constraintTop_toBottomOf="@id/baseFareAmount"
+                            app:layout_constraintEnd_toEndOf="@id/buttonContinue"
+                            android:layout_marginHorizontal="@dimen/_60sdp"
+                            app:layout_constraintBottom_toTopOf="@id/buttonContinue"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonContinue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginHorizontal="@dimen/_40sdp"
+                            android:text="@string/pay"
+                            android:textColor="@color/white"
+                            android:background="@drawable/custom_red_button_background"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

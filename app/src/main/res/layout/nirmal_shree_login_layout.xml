@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@color/red_home"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/nirmalShreeLogo"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:src="@drawable/nirmal_shree_logo"
+        app:layout_constraintBottom_toTopOf="@id/redCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/redCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/red_home"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nirmalShreeLogo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:id="@+id/googleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/fb_google_button_background"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/facebookButton"
+                app:layout_constraintBottom_toTopOf="@id/textOR">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:text="Login with "
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_14ssp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/google"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintStart_toEndOf="@id/googleButton"
+                android:id="@+id/facebookButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/fb_google_button_background"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="@id/googleButton"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:text="Login with "
+                    android:textSize="@dimen/_14ssp"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/facebook"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textOR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/googleButton"
+                app:layout_constraintEnd_toEndOf="@id/facebookButton"
+                app:layout_constraintTop_toBottomOf="@id/googleButton"
+                app:layout_constraintBottom_toTopOf="@id/userMobile"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="OR"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userMobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:theme="@style/TextInputLayoutStyle"
+                app:layout_constraintEnd_toEndOf="@id/facebookButton"
+                app:layout_constraintStart_toStartOf="@id/googleButton"
+                app:layout_constraintTop_toBottomOf="@id/textOR"
+                app:layout_constraintBottom_toTopOf="@id/checkRememberMe"
+                app:hintTextAppearance="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextMobile"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile No."
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:text="@={viewModel.personName}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/userMobile"
+                app:layout_constraintEnd_toEndOf="@id/userMobile"
+                app:layout_constraintTop_toBottomOf="@id/userMobile"
+                app:layout_constraintBottom_toTopOf="@id/loginButton"
+                android:text=" Remember Me"
+                android:textSize="@dimen/_12ssp"
+                android:checked="false"
+                android:button="@drawable/remember_me_checkbox_background"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginButton"
+                android:text="LOGIN"
+                app:layout_constraintStart_toStartOf="@id/userMobile"
+                app:layout_constraintEnd_toEndOf="@id/userMobile"
+                app:layout_constraintTop_toBottomOf="@id/checkRememberMe"
+                android:background="@drawable/login_button_background_nirmalshree"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/forgotPasswordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="Forgot Password?"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/loginButton"
+                app:layout_constraintEnd_toEndOf="@id/loginButton"
+                app:layout_constraintTop_toBottomOf="@id/loginButton"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createAccountButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="Create Account"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14ssp"
+                android:layout_margin="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/loginButton"
+                app:layout_constraintEnd_toEndOf="@id/loginButton"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

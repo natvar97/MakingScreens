@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/light_pink"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:id="@+id/appBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/backArrowToolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_left_arrow"
+                    android:tint="@color/white"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintTop_toTopOf="@id/backArrowToolbar"
+                    app:layout_constraintBottom_toBottomOf="@id/backArrowToolbar"
+                    android:text="@string/patient_summary"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toEndOf="@id/backArrowToolbar"
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintTop_toTopOf="@id/title"
+                    app:layout_constraintBottom_toBottomOf="@id/title"
+                    android:text="@string/chirag_shah"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    android:id="@+id/patientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:id="@+id/line"
+                    app:layout_constraintStart_toEndOf="@id/patientName"
+                    app:layout_constraintTop_toTopOf="@id/patientName"
+                    app:layout_constraintBottom_toBottomOf="@id/patientName"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="0dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintTop_toTopOf="@id/line"
+                    app:layout_constraintBottom_toBottomOf="@id/line"
+                    android:text="@string/_45_yrs"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toEndOf="@id/line"
+                    android:id="@+id/patientAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="@id/appBar"
+        app:layout_constraintEnd_toEndOf="@id/appBar"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        android:id="@+id/textDetailsLastAppointment"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/last_appointment_on_07_12_20_06_18_pm"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="@id/textDetailsLastAppointment"
+        app:layout_constraintEnd_toEndOf="@id/textDetailsLastAppointment"
+        app:layout_constraintTop_toBottomOf="@id/textDetailsLastAppointment"
+        android:id="@+id/textPrescriptionMedication"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/prescription_medication_on_07_12_20_07_00_pm"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp" />
+
+    <View
+        android:id="@+id/viewPaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textPrescriptionMedication"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_100sdp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintStart_toStartOf="@id/viewPaint"
+        app:layout_constraintBottom_toTopOf="@id/readingText"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:id="@+id/readingTextSugerLevel"
+        android:text="@string/chirag_s_sugar_level_is_high_as_per_last_reading"
+        android:layout_marginLeft="@dimen/_30sdp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintStart_toStartOf="@id/readingTextSugerLevel"
+        app:layout_constraintBottom_toBottomOf="@id/viewPaint"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_8ssp"
+        android:layout_height="wrap_content"
+        android:id="@+id/readingText"
+        android:text="@string/all_tests_are_completed_and_prescription_is_active" />
+
+    <View
+        android:id="@+id/lineVertical2"
+        app:layout_constraintStart_toEndOf="@id/readingTextSugerLevel"
+        app:layout_constraintTop_toTopOf="@id/readingTextSugerLevel"
+        app:layout_constraintBottom_toBottomOf="@id/readingText"
+        android:background="@color/white"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:elevation="@dimen/_10sdp"
+        android:translationZ="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:id="@+id/updatePrescriptionButton"
+        app:layout_constraintStart_toEndOf="@id/lineVertical2"
+        app:layout_constraintTop_toTopOf="@id/lineVertical2"
+        app:layout_constraintBottom_toBottomOf="@id/lineVertical2"
+        android:background="@drawable/custom_pink_button"
+        android:text="@string/update_prescription"
+        android:textSize="@dimen/_10ssp"
+        android:padding="@dimen/_5sdp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/_5sdp" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/layoutExamination"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPaint"
+        app:layout_constraintEnd_toStartOf="@id/layoutMedication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageExamination"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/bus"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textExamination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/examination"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/layoutMedication"
+        app:layout_constraintStart_toEndOf="@id/layoutExamination"
+        app:layout_constraintTop_toTopOf="@id/layoutExamination"
+        app:layout_constraintBottom_toBottomOf="@id/layoutExamination"
+        app:layout_constraintEnd_toStartOf="@id/layoutDiagnostic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageMedication"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/bus"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textMedication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/medication"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/layoutDiagnostic"
+        app:layout_constraintStart_toEndOf="@id/layoutMedication"
+        app:layout_constraintTop_toTopOf="@id/layoutMedication"
+        app:layout_constraintBottom_toBottomOf="@id/layoutMedication"
+        app:layout_constraintEnd_toStartOf="@id/layoutInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageDiagnostic"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/bus"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDiagnostic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/diagnostic"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/layoutInstruction"
+        app:layout_constraintStart_toEndOf="@id/layoutDiagnostic"
+        app:layout_constraintTop_toTopOf="@id/layoutDiagnostic"
+        app:layout_constraintBottom_toBottomOf="@id/layoutDiagnostic"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageInstruction"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/bus"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/instruction"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutExamination"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textExaminationCard"
+                android:text="@string/examination"
+                android:textColor="@color/pink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/examinationCardView"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textExaminationCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cardHeartRate"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutFirst"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/light_pink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintEnd_toStartOf="@id/dateAndTime"
+                            android:id="@+id/drName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pink"
+                            android:textStyle="bold"
+                            android:text="@string/dr_mahendra_rana"
+                            android:textSize="@dimen/_12ssp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/drName"
+                            app:layout_constraintTop_toTopOf="@id/drName"
+                            app:layout_constraintBottom_toBottomOf="@id/drName"
+                            android:id="@+id/dateAndTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pink"
+                            android:textStyle="bold"
+                            android:text="@string/_28_02_20_06_11_pm"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:layout_marginRight="@dimen/_10sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutSecond"
+                        app:layout_constraintStart_toStartOf="@id/layoutFirst"
+                        app:layout_constraintEnd_toEndOf="@id/layoutFirst"
+                        app:layout_constraintTop_toBottomOf="@id/layoutFirst"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:id="@+id/textFollowUpAt"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="@string/mediacal_diagnosis_second"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textFollowUpAddress"
+                            android:layout_width="0dp"
+                            android:textSize="@dimen/_10ssp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/textFollowUpAt"
+                            app:layout_constraintStart_toStartOf="@id/textFollowUpAt"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:maxLines="2"
+                            android:text="@string/shrikant_mathur_s_infection_rate_is_increasing_need_to_assign_new_prescription"/>
+
+                        <View
+                            android:id="@+id/textFollowUpAt"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textFollowUpAddress"
+                            android:layout_width="match_parent"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:background="@color/white_grey"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_height="@dimen/_2sdp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:id="@+id/buttonRescheduleFollowUp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/symptonsPrescription"
+                            app:layout_constraintTop_toBottomOf="@id/textFollowUpAt"
+                            app:layout_constraintEnd_toStartOf="@id/lineVertical"
+                            android:text="@string/symptoms"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/symptonsPrescription"
+                            android:layout_width="0dp"
+                            android:textSize="@dimen/_10ssp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/buttonRescheduleFollowUp"
+                            app:layout_constraintStart_toStartOf="@id/buttonRescheduleFollowUp"
+                            app:layout_constraintEnd_toStartOf="@id/lineVertical"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:maxLines="2"
+                            android:text="@string/fever_cold_rash"/>
+
+                        <View
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:id="@+id/lineVertical"
+                            android:background="@color/white_grey"
+                            app:layout_constraintEnd_toStartOf="@id/buttonCancelFollowUp"
+                            app:layout_constraintStart_toEndOf="@id/buttonRescheduleFollowUp"
+                            app:layout_constraintTop_toTopOf="@id/buttonRescheduleFollowUp"
+                            app:layout_constraintBottom_toBottomOf="@id/symptonsPrescription"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/buttonCancelFollowUp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="@id/textFollowUpAt"
+                            app:layout_constraintStart_toEndOf="@id/lineVertical"
+                            app:layout_constraintTop_toTopOf="@id/lineVertical"
+                            app:layout_constraintBottom_toTopOf="@id/observationsPrescription"
+                            android:text="@string/observations"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/observationsPrescription"
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_10ssp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="@id/buttonCancelFollowUp"
+                            app:layout_constraintTop_toBottomOf="@id/buttonCancelFollowUp"
+                            app:layout_constraintBottom_toBottomOf="@id/lineVertical"
+                            android:maxLines="2"
+                            android:text="@string/fever_cold_rash"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHeartRate"
+                app:layout_constraintEnd_toStartOf="@id/cardSugerLevel"
+                app:layout_constraintStart_toStartOf="@id/examinationCardView"
+                app:layout_constraintTop_toBottomOf="@id/examinationCardView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textHeart"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/textRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/heart"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textHeart"
+                        app:layout_constraintTop_toBottomOf="@id/textHeart"
+                        app:layout_constraintBottom_toTopOf="@id/countRate"
+                        android:id="@+id/textRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/rate"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textRate"
+                        app:layout_constraintTop_toBottomOf="@id/textRate"
+                        app:layout_constraintBottom_toTopOf="@id/unitBpm"
+                        android:id="@+id/countRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        android:text="@string/_80"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/countRate"
+                        app:layout_constraintTop_toBottomOf="@id/countRate"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/unitBpm"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bpm"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSugerLevel"
+                app:layout_constraintStart_toEndOf="@id/cardHeartRate"
+                app:layout_constraintTop_toTopOf="@id/cardHeartRate"
+                app:layout_constraintEnd_toStartOf="@id/cardBloodPressure"
+                app:layout_constraintBottom_toBottomOf="@id/cardHeartRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textSugar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/textLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/sugar"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textSugar"
+                        app:layout_constraintTop_toBottomOf="@id/textSugar"
+                        app:layout_constraintBottom_toTopOf="@id/countLevel"
+                        android:id="@+id/textLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/level"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textLevel"
+                        app:layout_constraintTop_toBottomOf="@id/textLevel"
+                        app:layout_constraintBottom_toTopOf="@id/unitLevel"
+                        android:id="@+id/countLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        android:text="@string/_15"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/countLevel"
+                        app:layout_constraintTop_toBottomOf="@id/countLevel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/unitLevel"
+                        android:textSize="@dimen/_10ssp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/mg_dl"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBloodPressure"
+                app:cardBackgroundColor="@color/pink"
+                app:layout_constraintEnd_toStartOf="@id/cardSpLevel"
+                app:layout_constraintStart_toEndOf="@id/cardSugerLevel"
+                app:layout_constraintTop_toTopOf="@id/cardSugerLevel"
+                app:layout_constraintBottom_toBottomOf="@id/cardSugerLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textBlood"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/textPressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="@string/blood"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textBlood"
+                        app:layout_constraintTop_toBottomOf="@id/textBlood"
+                        app:layout_constraintBottom_toTopOf="@id/countPressure"
+                        android:id="@+id/textPressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/pressure"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textPressure"
+                        app:layout_constraintTop_toBottomOf="@id/textPressure"
+                        app:layout_constraintBottom_toTopOf="@id/unitPressure"
+                        android:id="@+id/countPressure"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        android:text="@string/_120_80"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/countPressure"
+                        app:layout_constraintTop_toBottomOf="@id/countPressure"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/unitPressure"
+                        android:textSize="@dimen/_10ssp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/mmhg"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSpLevel"
+                app:layout_constraintStart_toEndOf="@id/cardBloodPressure"
+                app:layout_constraintTop_toTopOf="@id/cardBloodPressure"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/cardBloodPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textSp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/textLevelSp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/spo2"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textSp"
+                        app:layout_constraintTop_toBottomOf="@id/textSp"
+                        app:layout_constraintBottom_toTopOf="@id/countLevelSp"
+                        android:id="@+id/textLevelSp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        android:text="@string/level"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/textLevelSp"
+                        app:layout_constraintTop_toBottomOf="@id/textLevelSp"
+                        app:layout_constraintBottom_toTopOf="@id/unitLevelSp"
+                        android:id="@+id/countLevelSp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        android:text="@string/_95"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        app:layout_constraintStart_toStartOf="@id/countLevelSp"
+                        app:layout_constraintTop_toBottomOf="@id/countLevelSp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/unitLevelSp"
+                        android:textSize="@dimen/_10ssp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/percent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

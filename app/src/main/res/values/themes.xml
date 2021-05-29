@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MakingScreens" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="colorControlNormal">#2196F3</item>
+
+        <item name="colorControlActivated">#009688</item>
+
+    </style>
+
+    <style name="MyRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorAccent">@color/red_home</item>
+    </style>
+
+    <style name="customfontstyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/bainsley</item>
+    </style>
+
+
+    <style name="TextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/colorPrimaryBlue</item>
+        <item name="colorControlHighlight">@color/colorPrimaryBlue</item>
+        <item name="colorAccent">@color/lightBlue</item>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/hintColor</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <!--<item name="android:fontFamily">@font/sourcesanspro_regular</item>-->
+        <item name="android:singleLine">false</item>
+        <item name="android:textColorHighlight">@color/errorColor</item>
+        <item name="android:textColorLink">@color/errorColor</item>
+        <!--<item name="errorTextAppearance">@style/error_appearance</item>-->
+    </style>
+
+    <style name="EditTextStyle">
+        <!--<item name="android:fontFamily">@string/font_regular</item>-->
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+
+
+</resources>

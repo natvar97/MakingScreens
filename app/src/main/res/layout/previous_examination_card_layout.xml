@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView app:cardElevation="@dimen/_5sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFirst"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/light_pink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@id/dateAndTime"
+                android:id="@+id/drName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pink"
+                android:textStyle="bold"
+                android:text="@string/dr_mahendra_rana"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/drName"
+                app:layout_constraintTop_toTopOf="@id/drName"
+                app:layout_constraintBottom_toBottomOf="@id/drName"
+                android:id="@+id/dateAndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pink"
+                android:textStyle="bold"
+                android:text="@string/_28_02_20_06_11_pm"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSecond"
+            app:layout_constraintStart_toStartOf="@id/layoutFirst"
+            app:layout_constraintEnd_toEndOf="@id/layoutFirst"
+            app:layout_constraintTop_toBottomOf="@id/layoutFirst"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/textFollowUpAt"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/mediacal_diagnosis_second"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textFollowUpAddress"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_10ssp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textFollowUpAt"
+                app:layout_constraintStart_toStartOf="@id/textFollowUpAt"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:maxLines="2"
+                android:text="@string/shrikant_mathur_s_infection_rate_is_increasing_need_to_assign_new_prescription"/>
+
+            <View
+                android:id="@+id/textFollowUpAt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFollowUpAddress"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/white_grey"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="@dimen/_2sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/buttonRescheduleFollowUp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/symptonsPrescription"
+                app:layout_constraintTop_toBottomOf="@id/textFollowUpAt"
+                app:layout_constraintEnd_toStartOf="@id/lineVertical"
+                android:text="@string/symptoms"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/symptonsPrescription"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_10ssp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/buttonRescheduleFollowUp"
+                app:layout_constraintStart_toStartOf="@id/buttonRescheduleFollowUp"
+                app:layout_constraintEnd_toStartOf="@id/lineVertical"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:maxLines="2"
+                android:text="@string/fever_cold_rash"/>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/lineVertical"
+                android:background="@color/white_grey"
+                app:layout_constraintEnd_toStartOf="@id/buttonCancelFollowUp"
+                app:layout_constraintStart_toEndOf="@id/buttonRescheduleFollowUp"
+                app:layout_constraintTop_toTopOf="@id/buttonRescheduleFollowUp"
+                app:layout_constraintBottom_toBottomOf="@id/symptonsPrescription"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonCancelFollowUp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/textFollowUpAt"
+                app:layout_constraintStart_toEndOf="@id/lineVertical"
+                app:layout_constraintTop_toTopOf="@id/lineVertical"
+                app:layout_constraintBottom_toTopOf="@id/observationsPrescription"
+                android:text="@string/observations"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/observationsPrescription"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/_10ssp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/buttonCancelFollowUp"
+                app:layout_constraintTop_toBottomOf="@id/buttonCancelFollowUp"
+                app:layout_constraintBottom_toBottomOf="@id/lineVertical"
+                android:maxLines="2"
+                android:text="@string/fever_cold_rash"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

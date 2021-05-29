@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/backArrowToolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_left_arrow"
+                    android:tint="@color/white"
+                    app:tintMode="src_in"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/examination_golakla"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_18ssp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toEndOf="@id/backArrowToolbar"
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textCurrentExamination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/layoutCurrentExamination"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/appBar"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintEnd_toStartOf="@id/textPreviousExamination"
+        android:text="@string/current_examination"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textPreviousExamination"
+        android:textAlignment="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@id/textCurrentExamination"
+        app:layout_constraintStart_toEndOf="@id/textCurrentExamination"
+        app:layout_constraintTop_toTopOf="@id/textCurrentExamination"
+        app:layout_constraintEnd_toEndOf="@id/appBar"
+        android:text="@string/previous_examination"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:gravity="center_horizontal" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCurrentExamination"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/textCurrentExamination"
+        app:layout_constraintEnd_toEndOf="@id/textPreviousExamination"
+        app:layout_constraintTop_toBottomOf="@id/textCurrentExamination"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextObservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textObservation"
+            android:text="@string/observation"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginLeft="@dimen/_15sdp" />
+        
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextObservation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/textIssue"
+            app:layout_constraintStart_toStartOf="@id/textObservation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textObservation"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="@string/cough_fever"
+            android:textSize="@dimen/_12ssp"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@id/editTextObservation"
+            app:layout_constraintTop_toBottomOf="@id/editTextObservation"
+            app:layout_constraintBottom_toTopOf="@id/editTextIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textIssue"
+            android:text="@string/issue_symptom"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextIssue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textObservation"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/textIssue"
+            app:layout_constraintBottom_toTopOf="@id/textMedicalDiagnosis"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="@string/runny_nose_temperature"
+            android:textSize="@dimen/_12ssp"
+            android:padding="@dimen/_8sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@id/editTextIssue"
+            app:layout_constraintTop_toBottomOf="@id/editTextIssue"
+            app:layout_constraintBottom_toTopOf="@id/editTextIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textMedicalDiagnosis"
+            android:text="@string/medical_diagnosis"
+            android:textColor="@color/pink"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextMedicalDiagnosis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="@id/textMedicalDiagnosis"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textMedicalDiagnosis"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:hint="@string/need_to_prescribe_medication_and_take_rest"
+            android:padding="@dimen/_8sdp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_pink_button"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="@id/editTextMedicalDiagnosis"
+            app:layout_constraintEnd_toEndOf="@id/editTextMedicalDiagnosis"
+            app:layout_constraintTop_toBottomOf="@id/editTextMedicalDiagnosis"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPreviousExamination"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textCurrentExamination"
+        app:layout_constraintEnd_toEndOf="@id/textPreviousExamination"
+        app:layout_constraintTop_toBottomOf="@id/layoutCurrentExamination">
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerViewExamination"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
